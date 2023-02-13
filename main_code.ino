@@ -14,18 +14,21 @@ MD_Parola P = MD_Parola(HARDWARE_TYPE, DATA_PIN, CLK_PIN, CS_PIN, MAX_DEVICES);
 
 void setup(void)
 {
+  Serial.begin(115200);
   P.begin(2);
   P.setZone(0, 0, 3);
   P.setZone(1, 4, 7);
+
+  P.setFont(0, BigFontUpper);
+  P.setFont(1, BigFontLower);
   
+
   
       
 }
 
 void loop(void)
 {
-  P.setFont(1, BigFontLower);
-  P.setFont(0, BigFontUpper);
   P.displayZoneText(0, "612", PA_CENTER, 30, 30000, PA_PRINT, PA_PRINT);
   P.displayZoneText(1, "612", PA_CENTER, 30, 30000, PA_PRINT, PA_PRINT);
   P.displayAnimate();
