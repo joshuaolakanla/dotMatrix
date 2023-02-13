@@ -21,6 +21,9 @@ void setup(void)
 
   P.setFont(0, BigFontUpper);
   P.setFont(1, BigFontLower);
+
+  P.displayZoneText(0, "Jossytech", PA_CENTER, 80, 10, PA_SCROLL_LEFT, PA_SCROLL_UP);
+  P.displayZoneText(1, "Jossytech", PA_CENTER, 80, 10, PA_SCROLL_LEFT, PA_SCROLL_UP);
   
 
   
@@ -29,7 +32,14 @@ void setup(void)
 
 void loop(void)
 {
-  P.displayZoneText(0, "612", PA_CENTER, 30, 30000, PA_PRINT, PA_PRINT);
-  P.displayZoneText(1, "612", PA_CENTER, 30, 30000, PA_PRINT, PA_PRINT);
   P.displayAnimate();
+  if (P.getZoneStatus(0) && P.getZoneStatus(1)){
+    P.setTextEffect(0, PA_SCROLL_LEFT, PA_SCROLL_UP);
+    P.setTextEffect(1, PA_SCROLL_LEFT, PA_SCROLL_UP);
+    P.displayReset(0);
+    P.displayReset(1);
+
+
+  }
+  
     }
