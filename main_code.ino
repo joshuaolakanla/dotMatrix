@@ -12,17 +12,17 @@
 #include "Font_Data.h"
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
 #define MAX_DEVICES 24
-#define CLK_PIN   4 //D2
-#define DATA_PIN  12 //D6
-#define CS_PIN    16 //D0
+#define CLK_PIN   16 //D0
+#define DATA_PIN  5 //D1
+#define CS_PIN    4 //D2
 
-#define CLK_PIN2   5 //D1
-#define DATA_PIN2  0 //D3
+#define CLK_PIN2   0 //D3
+#define DATA_PIN2  2 //D4
 #define CS_PIN2    14 //D5
 
-#define CLK_PIN3   2 //D4
+#define CLK_PIN3   12 //D6
 #define DATA_PIN3  13 //D7
-#define CS_PIN3    15 //D8
+#define CS_PIN3    3 //D8
 
 
 String a,b,c,d,e,f,g;
@@ -164,9 +164,9 @@ void setup(void)
   P2.setZone(5, 20, 23);
 
 
-  P.setIntensity(8);
-  P1.setIntensity(8);
-  P2.setIntensity(8);
+  P.setIntensity(4);
+  P1.setIntensity(4);
+  P2.setIntensity(4);
   
   P.setFont(0, BigFontUpper);
   P.setFont(1, BigFontLower);
